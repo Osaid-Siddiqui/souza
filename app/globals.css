@@ -10,13 +10,13 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #94AD42;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: #CDCFC7;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: #827765;
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -46,13 +46,13 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
+  --primary: #94AD42;
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: #CDCFC7;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: #827765;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -244,4 +244,61 @@
 .flowing-lines::after {
   top: 60%;
   animation-delay: 7s;
+}
+
+/* Subtle floating abstract shapes using brand palette */
+@keyframes drift {
+  0% { transform: translateY(0) translateX(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-20px) translateX(10px) scale(1.05) rotate(5deg); }
+  100% { transform: translateY(0) translateX(0) scale(1) rotate(0deg); }
+}
+
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-shapes .shape {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(20px);
+  opacity: 0.12;
+  will-change: transform;
+  animation: drift 28s ease-in-out infinite;
+}
+
+.shape--primary {
+  background: #94AD42;
+  width: 280px;
+  height: 280px;
+  top: 12%;
+  left: -6%;
+}
+
+.shape--secondary {
+  background: #CDCFC7;
+  width: 220px;
+  height: 220px;
+  bottom: 14%;
+  right: -8%;
+  animation-duration: 32s;
+}
+
+.shape--accent {
+  background: #827765;
+  width: 240px;
+  height: 240px;
+  top: 48%;
+  left: 62%;
+  animation-duration: 36s;
+  animation-delay: 6s;
+}
+
+@media (max-width: 768px) {
+  .shape--primary { width: 180px; height: 180px; left: -12%; }
+  .shape--secondary { width: 160px; height: 160px; right: -14%; }
+  .shape--accent { width: 170px; height: 170px; left: 50%; }
 }
