@@ -169,11 +169,11 @@
 .animated-gradient {
   background: linear-gradient(
     135deg,
-    rgba(148, 173, 66, 0.15),
-    rgba(205, 207, 199, 0.15),
-    rgba(130, 119, 101, 0.15),
-    rgba(26, 26, 26, 0.05),
-    rgba(148, 173, 66, 0.15)
+    rgba(148, 173, 66, 0.28),
+    rgba(205, 207, 199, 0.26),
+    rgba(130, 119, 101, 0.22),
+    rgba(26, 26, 26, 0.06),
+    rgba(148, 173, 66, 0.28)
   );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
@@ -188,7 +188,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(148, 173, 66, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 30%, rgba(148, 173, 66, 0.2) 0%, transparent 55%);
   animation: float 20s ease-in-out infinite;
   pointer-events: none;
 }
@@ -200,7 +200,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(130, 119, 101, 0.08) 0%, transparent 50%);
+  background: radial-gradient(circle at 70% 70%, rgba(130, 119, 101, 0.15) 0%, transparent 55%);
   animation: floatReverse 25s ease-in-out infinite;
   pointer-events: none;
 }
@@ -231,8 +231,8 @@
   content: "";
   position: absolute;
   width: 200%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(148, 173, 66, 0.3), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(148, 173, 66, 0.5), transparent);
   animation: flowLine 15s linear infinite;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .floating-shapes {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
@@ -265,7 +265,7 @@
   position: absolute;
   border-radius: 9999px;
   filter: blur(20px);
-  opacity: 0.12;
+  opacity: 0.2;
   will-change: transform;
   animation: drift 28s ease-in-out infinite;
 }
